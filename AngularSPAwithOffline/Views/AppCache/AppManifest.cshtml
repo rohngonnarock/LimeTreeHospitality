@@ -1,0 +1,27 @@
+﻿@model AngularSPAwithOffline.Models.AppCacheModel
+@{  Layout = null;
+    Response.ContentType = "text/cache-manifest";
+    Response.Cache.SetCacheability(HttpCacheability.NoCache);
+    Response.ContentEncoding = System.Text.Encoding.UTF8;
+    Response.Cache.SetExpires(DateTime.Now.AddDays(10));
+    Response.Write("CACHE MANIFEST");
+}
+# Server Assembly Version: @Model.AssemblyVersion
+NETWORK:
+*
+CACHE:
+@foreach (string cacheItem in Model.CacheCollection)
+{
+    @cacheItem
+}
+http://spawithoffline.azurewebsites.net/stateOne
+http://spawithoffline.azurewebsites.net/stateTwo
+http://spawithoffline.azurewebsites.net/stateThree
+http://spawithoffline.azurewebsites.net/stateFour
+http://spawithoffline.azurewebsites.net/routesDemo/one
+http://spawithoffline.azurewebsites.net/routesDemo/two
+http://spawithoffline.azurewebsites.net/routesDemo/three
+http://spawithoffline.azurewebsites.net/routesDemo/four
+
+SETTINGS:
+prefer-online
