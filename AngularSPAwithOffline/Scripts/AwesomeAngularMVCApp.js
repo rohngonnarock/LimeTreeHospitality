@@ -57,6 +57,14 @@ var configFunction = function ($stateProvider, $httpProvider, $locationProvider)
                 }
             }
         })
+         .state('stateFour', {
+             url: '/stateFour',
+             views: {
+                 "containerOne": {
+                     templateUrl: '/routesDemo/Four'
+                 }
+             }
+         })
         .state('loginRegister', {
             url: '/loginRegister?returnUrl',
             views: {

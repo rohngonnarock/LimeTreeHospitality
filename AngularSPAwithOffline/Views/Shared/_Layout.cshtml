@@ -2,7 +2,8 @@
     Response.Cache.SetExpires(DateTime.Now.AddMinutes(30));
 }
 <!DOCTYPE html>
-<html manifest="~/AppCache/AppManifest" type="text/cache-manifest" ng-app="AwesomeAngularMVCApp" ng-controller="LandingPageController">
+@*manifest="~/AppCache/AppManifest" type="text/cache-manifest"*@
+<html  ng-app="AwesomeAngularMVCApp" ng-controller="LandingPageController">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,26 +18,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" ui-sref="stateOne">Experience Travel</a>
+                <a class="navbar-brand" ui-sref="stateOne">Lime Tree Hospitality</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <li><a ui-sref="stateOne">DashBoard</a></li>
                     <li><a ui-sref="stateTwo">About</a></li>
+                    <li><a ui-sref="stateFour">Test</a></li>
                     <li><a ui-sref="stateThree">Contact</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a ui-sref="loginRegister">Login / Register</a></li>
-                </ul>
-                @*@Html.Partial("_LoginPartial")*@
             </div>
         </div>
     </div>
+    @RenderBody()
     <div class="container body-content">
-        @RenderBody()
+       
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Lime Tree Hospitality</p>
         </footer>
     </div>
     @Styles.RenderFormat("<link href=\"{0}\" rel='stylesheet' async />", "~/Content/css")
